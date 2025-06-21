@@ -64,7 +64,8 @@ app.use((req, res, next) => {
 // ✅ Updated CORS setup
 const allowedOrigins = [
   "http://localhost:3000", // local React
-  "https://mern-alpha-wine.vercel.app" // deployed frontend
+  // "https://mern-alpha-wine.vercel.app" // deployed frontend
+  "https://mern-x9xt.vercel.app"
 ];
 
 const corsOptions = {
