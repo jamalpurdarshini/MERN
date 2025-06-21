@@ -14,6 +14,12 @@ dotenv.config({
 })
 
 const app = express();
+
+app.use((req, res, next) => {
+  console.log(`➡️ ${req.method} ${req.url}`);
+  next();
+});
+
 //middlewares 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
@@ -26,6 +32,11 @@ app.use(cors(corsOptions));
  
 // api
 app.use("/api/v1/user", userRoute);
+
+app.get("/", (req, res) => {
+  res.send("🚀 Netflix Clone Backend is Running");
+});
+
 
 app.listen(process.env.PORT,() => {
     console.log(`Server listen at port ${process.env.PORT}`);
